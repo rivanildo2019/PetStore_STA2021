@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.contains;
 
 
 public class Pet {
@@ -52,6 +53,8 @@ public class Pet {
                 .statusCode(200)
                 .body("name", is("thor"))
                 .body("status", is("available"))
+                .body("category.name", is("dog"))
+                .body("tags.name", contains("sta"))
         ;
 
 
