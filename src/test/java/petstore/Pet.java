@@ -20,23 +20,23 @@ public class Pet {
 
     //3.1 Atributos
 
-    String uri = "https://petstore.swagger.io/v2/pet"; // Endere√ßo da entidade Pet
+    String uri = "https://petstore.swagger.io/v2/pet"; // EndereÁo da entidade Pet
 
 
-    //3.2 M√©todos e Fun√ß√µes
+    //3.2 MÈtodos e FunÁıes
     public String lerJson(String caminhoJson) throws IOException {
 
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
 
     }
     //Incluir - create - Post
-    @Test// identifica o metodo ou fun√ß√£o como um teste para o TestNG
+    @Test(priority = 1)// identifica o metodo ou funÁ„o como um teste para o TestNG
     public void incluirPet() throws IOException {
 
         String jsonBody = lerJson("data_base/pet1.json" );
 
-        //sintaxe Gherkin (giria pepino e conserva = problema de comunica√ß√£o
-        // Dado - Quando - Ent√£o
+        //sintaxe Gherkin (giria pepino e conserva = problema de comunicaÁ„o
+        // Dado - Quando - Ent„o
         // Given - When - Then
 
         given()//Dado
@@ -48,15 +48,42 @@ public class Pet {
         .when()//Quando
                 .post(uri)
 
-        .then()// Ent√£o
+        .then()// Ent„o
                 .log().all()
                 .statusCode(200)
                 .body("name", is("thor"))
                 .body("status", is("available"))
-                .body("category.name", is("dog"))
+                .body("category.name", is("AXER34JTLO"))
                 .body("tags.name", contains("sta"))
         ;
 
+
+    }
+
+    @Test(priority = 2)
+    public void consultarPet(){
+        String petId = "1980082251";
+        String token =
+
+        given()
+                .contentType("applicatio/json")
+                .log().all()
+        .when()
+                .get(uri + "/" + petId)
+
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("name", is("thor"))
+                .body("category.name", is("AXER34JTLO"))
+                .body("status", is("available"))
+
+        .extract()
+                .path("category.name")
+
+        ;
+
+        System.out.println("O token È " + token);
 
     }
 
