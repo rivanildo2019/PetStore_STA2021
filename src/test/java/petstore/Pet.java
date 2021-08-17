@@ -87,6 +87,56 @@ public class Pet {
 
     }
 
+    @Test(priority = 3)
+    public void alterarPet() throws IOException {
+
+        String jsonBody = lerJson("data_base/pet2.json" );
+
+        //sintaxe Gherkin (giria pepino e conserva = problema de comunicação
+        // Dado - Quando - Então
+        // Given - When - Then
+
+        given()//Dado
+
+                .contentType("application/json")// comum em API REST - antigas era "text/xml
+                .log().all()
+                .body(jsonBody)
+
+                .when()//Quando
+                .put(uri)
+
+                .then()// Então
+                .log().all()
+                .statusCode(200)
+                .body("name", is("thor"))
+                .body("status", is("Sold"))
+
+        ;
+
+    }
+    @Test(priority = 4)
+    public void excluirPet(){
+
+        String petId = "1980082251";
+        given()
+                .contentType("application/json")
+                .log().all()
+        .when()
+                .delete(uri + "/" + petId)
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("code", is(200))
+                .body("type", is ("unknown"))
+                .body("message", is(petId))
+
+
+
+        ;
+
+
+    }
+
 }
 
 
