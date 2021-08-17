@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="petstore.Pet" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-08-17T19:47:06" hostname="DESKTOP-8Q5R70V" time="7.345">
+<testsuite name="petstore.Pet" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-08-17T19:57:22" hostname="DESKTOP-8Q5R70V" time="7.486">
   <properties/>
-  <testcase name="incluirPet" classname="petstore.Pet" time="3.755"/>
-  <testcase name="consultarPet" classname="petstore.Pet" time="1.244"/>
-  <testcase name="alterarPet" classname="petstore.Pet" time="1.164"/>
-  <testcase name="excluirPet" classname="petstore.Pet" time="1.176"/>
+  <testcase name="incluirPet" classname="petstore.Pet" time="3.139"/>
+  <testcase name="consultarPet" classname="petstore.Pet" time="1.35"/>
+  <testcase name="alterarPet" classname="petstore.Pet" time="1.446"/>
+  <testcase name="excluirPet" classname="petstore.Pet" time="1.535"/>
   <system-out><![CDATA[Request method:	POST
 Request URI:	https://petstore.swagger.io/v2/pet
 Proxy:			<none>
@@ -36,7 +36,7 @@ Body:
     "status": "available"
 }
 HTTP/1.1 200 OK
-Date: Tue, 17 Aug 2021 19:46:44 GMT
+Date: Tue, 17 Aug 2021 19:57:00 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -76,7 +76,7 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Tue, 17 Aug 2021 19:46:46 GMT
+Date: Tue, 17 Aug 2021 19:57:02 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -135,7 +135,7 @@ Body:
     "status": "Sold"
 }
 HTTP/1.1 200 OK
-Date: Tue, 17 Aug 2021 19:46:48 GMT
+Date: Tue, 17 Aug 2021 19:57:03 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -175,7 +175,7 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Tue, 17 Aug 2021 19:46:49 GMT
+Date: Tue, 17 Aug 2021 19:57:05 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
